@@ -1,0 +1,15 @@
+{
+  "name": "buildless-web-starter",
+  "version": "0.0.1",
+  "description": "An opininated starter for websites, without requiring build tools.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "browser-sync start --server \"src\" --watch --no-ui",
+    "test": "TBD"
+  },
+  "author": "Frank Reding",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^3.0.3"
+  }
+}

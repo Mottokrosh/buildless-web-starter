@@ -1,0 +1,149 @@
+body {
+	height: 150vh;
+	background: hsl(0deg 0% 95%);
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	--thickness: 4px;
+	width: 100%;
+	padding: 16px 24px;
+	z-index: 2;
+	position: sticky;
+	top: 0;
+	background: hsl(0deg 0% 100% / 0.95);
+
+	.content {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h1 {
+			margin: 0;
+		}
+
+		ul {
+			display: flex;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			a {
+				padding: 0.5rem 1rem;
+			}
+		}
+	}
+}
+
+@supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+	header {
+		background: hsl(0deg 0% 100% / 0.5);
+	}
+
+	.backdrop {
+		position: absolute;
+		inset: 0;
+		-webkit-backdrop-filter: blur(16px);
+		backdrop-filter: blur(16px);
+		background: linear-gradient(
+			to bottom,
+			hsl(0deg 0% 95%),
+			transparent 50%
+		);
+		pointer-events: none;
+	}
+
+	.backdrop-edge {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: var(--thickness);
+		background: hsl(0deg 0% 100% / 0.1);
+		-webkit-backdrop-filter: blur(12px) brightness(0.96);
+		backdrop-filter: blur(12px) brightness(0.96);
+		transform: translateY(100%);
+		pointer-events: none;
+	}
+}
+
+@supports (mask-image: none) or (-webkit-mask-image: none) {
+	.backdrop {
+		height: 200%;
+		-webkit-mask-image: linear-gradient(
+			to bottom,
+			black 0% 50%,
+			transparent 50% 100%
+		);
+		mask-image: linear-gradient(
+			to bottom,
+			black 0% 50%,
+			transparent 50% 100%
+		);
+	}
+	.backdrop-edge {
+		height: 100%;
+		inset: 0;
+		-webkit-mask-image: linear-gradient(
+			to bottom,
+			black 0,
+			black var(--thickness),
+			transparent var(--thickness)
+		);
+		mask-image: linear-gradient(
+			to bottom,
+			black 0,
+			black var(--thickness),
+			transparent var(--thickness)
+		);
+	}
+}
+
+main {
+	max-width: 120rem;
+	margin: auto;
+	padding: 24px;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 160px;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	
+	&:before {
+		content: "";
+		inset: 0;
+		display: block;
+		background: hsl(0deg 0% 100% / 0.95);
+		position: absolute;
+		pointer-events: none;
+	}
+
+	@supports (backdrop-filter: blur(30px)) or (-webkit-backdrop-filter: blur(30px)) {
+		&:before {
+			background: hsl(0deg 0% 100% / 0.5);
+			-webkit-backdrop-filter: blur(30px) saturate(1.2);
+			backdrop-filter: blur(30px) saturate(1.2);
+		}
+	}
+
+	@supports (mask-image: none) or (-webkit-mask-image: none) {
+		&:before {
+			-webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 80%, #000);
+			mask-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 80%, #000);
+		}
+	}
+
+	& p {
+		position: relative;
+	}
+}

@@ -1,3 +1,4 @@
+import "./components/greet-er.js";
 import { test } from "./components/test.js";
 import { DateTime } from "luxon";
 

@@ -2,7 +2,7 @@ class GreetEr extends HTMLElement {
 	static tag = "greet-er";
 
 	/**
-	 * Static method to define the custom element.
+	 * Static method to define the custom element, and do some checks.
 	 * 
 	 * @param string tag 
 	 * @returns void
@@ -42,7 +42,6 @@ class GreetEr extends HTMLElement {
 	}
 
 	attributeChangedCallback(attr, oldValue, newValue) {
-		if (!this.constructor.observedAttributes.includes(attr)) return;
 		if (oldValue === newValue) return;
 		this.render();
 	}

@@ -1,13 +1,11 @@
 import "./components/greet-er.js";
-import { test } from "./components/test.js";
+import "sparkly-text";
 import { DateTime } from "luxon";
 
-test();
 
 const mainEl = document.querySelector("main");
-const date = DateTime.now()
-	.setZone("Europe/Berlin")
-	.minus({ weeks: 1 })
-	.endOf("day")
-	.toISO();
-mainEl.append(`<p>${date}</p>`);
+const date = DateTime.now().toLocaleString(DateTime.DATETIME_FULL);
+const paragraph = document.createElement("p");
+paragraph.textContent = `This page was loaded on ${date}.`;
+paragraph.style.paddingBlockEnd = "128px";
+mainEl.append(paragraph);

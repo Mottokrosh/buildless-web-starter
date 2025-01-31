@@ -5,11 +5,15 @@
   "main": "src/index.html",
   "scripts": {
     "start": "browser-sync start --server \"src\" --watch --no-ui",
+    "lint": "eslint src",
     "test": "TBD"
   },
   "author": "Frank Reding",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^3.0.3"
+    "@eslint/js": "^9.19.0",
+    "browser-sync": "^3.0.3",
+    "eslint": "^9.19.0",
+    "globals": "^15.14.0"
   }
 }

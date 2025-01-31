@@ -54,3 +54,5 @@ class GreetEr extends HTMLElement {
 		this.render();
 	}
 }
+
+export default GreetEr;

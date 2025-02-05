@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>🚀 Tests</title>
+		<link	rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -14 16 16'><text>🚀</text></svg>">
+		<link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css">
+	</head>
+	<body>
+		<div id="mocha"></div>
+
+		<script src="https://unpkg.com/chai@4/chai.js"></script>
+		<script src="https://unpkg.com/mocha/mocha.js"></script>
+
+		<script>
+			mocha.setup("bdd");
+			mocha.checkLeaks();
+			window.addEventListener("load", function () {
+				mocha.run();
+			});
+		</script>
+
+		<script src="../js/components/greet-er.test.js" type="module"></script>
+	</body>
+</html>

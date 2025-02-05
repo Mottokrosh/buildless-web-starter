@@ -6,7 +6,7 @@
   "scripts": {
     "start": "browser-sync start --server \"src\" --watch --no-ui",
     "lint": "eslint src",
-    "test": "TBD"
+    "test": "echo 'Visit /tests for tests :)'"
   },
   "author": "Frank Reding",
   "license": "ISC",

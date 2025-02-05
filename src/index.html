@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta name="viewport" content="width=device-width">
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
 		<title>🚀 Starter</title>
 		<link	rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -14 16 16'><text>🚀</text></svg>">
 		<link rel="stylesheet" href="css/index.css">
@@ -10,7 +10,9 @@
 			{
 				"imports": {
 					"sparkly-text": "https://esm.sh/@stefanjudis/sparkly-text",
-					"luxon": "https://esm.sh/luxon@latest"
+					"luxon": "https://esm.sh/luxon@latest",
+					"greet-er": "./js/components/greet-er.js",
+					"current-datetime": "./js/components/current-datetime.js"
 				}
 			}
 		</script>
@@ -21,7 +23,7 @@
 			<div class="backdrop"></div>
 			<div class="backdrop-edge"></div>
 			<div class="content">
-				<h1>🚀 Starter</h1>
+				<p>🚀 Starter</p>
 
 				<nav>
 					<ul>
@@ -38,6 +40,7 @@
 				<h1>Pithy Headline</h1>
 				<p><greet-er name="Frank"></greet-er></p>
 				<p>How about some <sparkly-text style="--sparkly-text-color: rainbow; --sparkly-text-size: 2em">sparkly text</sparkly-text>, courtesy of a 3rd party web component?</p>
+				<p><current-datetime></current-datetime></p>
 				<p><img src="img/1F98C.svg" alt="Stylized SVG version of the deer emoji."></p>
 				<p><img src="img/1F43B.svg" alt="Stylized SVG version of the bear emoji."></p>
 			</main>

@@ -17,6 +17,10 @@ body {
 		hsl(198deg 86% 38%) 80%,
 		hsl(196deg 87% 40%) 100%
 	);
+	background-image: radial-gradient(
+		farthest-corner circle at 100% 0% in oklab,
+		oklch(80% .4 222) 0%, oklch(35% .5 313) 50%, oklch(80% 0.3 209) 100%
+	);
 }
 
 /* --- Header --- */
@@ -36,8 +40,8 @@ header {
 		justify-content: space-between;
 		align-items: center;
 
-		h1 {
-			margin: 0;
+		p {
+			margin: 1rem;
 		}
 
 		ul {
@@ -177,7 +181,7 @@ footer {
 	justify-content: center;
 	
 	
-	&:before {
+	&::before {
 		content: "";
 		inset: 0;
 		display: block;
@@ -187,7 +191,7 @@ footer {
 	}
 
 	@supports (backdrop-filter: blur(30px)) or (-webkit-backdrop-filter: blur(30px)) {
-		&:before {
+		&::before {
 			background: hsl(var(--color-bg) / 0.5);
 			-webkit-backdrop-filter: blur(30px) saturate(1.2);
 			backdrop-filter: blur(30px) saturate(1.2);
@@ -195,13 +199,13 @@ footer {
 	}
 
 	@supports (mask-image: none) or (-webkit-mask-image: none) {
-		&:before {
+		&::before {
 			-webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 80%, #000);
 			mask-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) 80%, #000);
 		}
 	}
 
-	& p {
+	p {
 		position: relative;
 	}
 }
